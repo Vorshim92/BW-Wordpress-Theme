@@ -4,7 +4,7 @@
 get_header();
 the_post(); ?>
 <div class="row">
-    <div class="col-12 col-md-9 text-white">
+    <div class="col-12 col-md-9 ">
         <h1><?php the_title(); ?></h1>
         <a href="<?php the_author_meta() ?>"></a>
         <?php the_content(); ?>

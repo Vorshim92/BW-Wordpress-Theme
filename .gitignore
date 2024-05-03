@@ -17,3 +17,5 @@ index.php
 /wp-content/themes/*
 !/wp-content/themes/totheinfinityandbeyond
 !/wp-content/themes/totheinfinityandbeyond/index.php
+!/wp-content/themes/totheinfinityandbeyond/mytheme/index.php
+

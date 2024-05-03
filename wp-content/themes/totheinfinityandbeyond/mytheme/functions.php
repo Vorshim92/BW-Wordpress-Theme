@@ -18,6 +18,13 @@ function theme_features()
 }
 add_action('after_setup_theme', 'theme_features');
 
+function custom_article_form_shortcode() {
+    ob_start();
+    include 'addarticle.php';
+    return ob_get_clean();
+}
+add_shortcode('custom_article_form', 'custom_article_form_shortcode');
+
 function create_sidebar_cards()
 { ?>
     <li><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></li><?php

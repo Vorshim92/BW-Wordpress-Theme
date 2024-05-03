@@ -8,6 +8,7 @@ the_post(); ?>
         <h1><?php the_title(); ?></h1>
         <a href="<?php the_author_meta() ?>"></a>
         <?php the_content(); ?>
+        <img src="<?php the_post_thumbnail_url('large'); ?>" alt="<?php the_title(); ?>" class="img-fluid">
     </div>
     <div class="col-12 col-md-3">
         <?php get_sidebar() ?>

@@ -173,8 +173,7 @@ get_header(); ?>
     </main>
 </div>
 
-<button><a href="<?php echo esc_url(get_permalink(get_page_by_path('aggiungi-articolo'))); ?>" class="button">Aggiungi Articolo</a>
-</button>
+
 
 
 

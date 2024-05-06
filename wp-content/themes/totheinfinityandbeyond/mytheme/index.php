@@ -10,7 +10,7 @@ get_header(); ?>
 
 
         <section class="destination-photos pb-5">
-            <div class="container-fluid">
+            <div class="container-fluid ">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -51,7 +51,8 @@ get_header(); ?>
         </section>
 
         <section class="destination-photos py-5" id="pulse">
-            <div class="container-fluid  text-center">
+            <div class="container  text-center">
+                <h1>ESPLORA LA TUA NUOVA META</h1>
                 <div class="row gy-4">
                     <div class="col-3">
                         <div class="card" style="width: 100%;">
@@ -100,7 +101,7 @@ get_header(); ?>
             </div>
         </section>
 
-        <div class="row mt-5">
+        <div class="row mt-5 mx-5">
             <div class="col-12">
                 <section class="mb-5" id="section-details">
                     <div class="container-fluid" id="fadeInLeftBig">

@@ -15,7 +15,9 @@ footer {
 }
 
 #carouselImg {
-  max-height: 700px;
+  height: 800px;
+  max-height: 1000px;
+  object-fit: cover;
 }
 
 #fadeInLeftBig {
@@ -134,8 +136,9 @@ footer {
 }
 
 #img-state {
+  height: 180px;
   max-width: 100%;
-  max-height: 180px;
+  max-height: 200px;
   object-fit: cover;
   overflow: hidden;
 }

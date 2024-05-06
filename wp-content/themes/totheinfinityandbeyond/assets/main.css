@@ -141,4 +141,5 @@ footer {
   max-height: 200px;
   object-fit: cover;
   overflow: hidden;
+  width: 100% !important;
 }

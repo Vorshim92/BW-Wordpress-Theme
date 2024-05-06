@@ -50,56 +50,56 @@ get_header(); ?>
             </div>
         </section>
 
+
+
+
+
+
+
         <section class="destination-photos py-5" id="pulse">
-            <div class="container  text-center">
+            <div class="container text-center">
                 <h1>ESPLORA LA TUA NUOVA META</h1>
                 <div class="row gy-4">
-                    <div class="col-3">
-                        <div class="card" style="width: 100%;">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/europa.jpg" alt="Disneyland Photo 1" class="img-fluid" id="img-state">
-                            <div class="card-body">
-                                <h5 class="card-title">EUROPA</h5>
+                    <?php
+                    $args = array(
+                        'post_type' => 'ttiab_trips',
+                        'posts_per_page' => -1
+                    );
 
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                    $query = new WP_Query($args);
+
+                    if ($query->have_posts()) {
+                        while ($query->have_posts()) {
+                            $query->the_post();
+                    ?>
+                            <div class="col-3">
+                                <div class="card" style="width: 100%;">
+                                    <?php the_post_thumbnail('thumbnail', ['class' => 'img-fluid', 'id' => 'img-state']); ?>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php the_title(); ?></h5>
+                                        <a href="<?php the_permalink(); ?>" class="btn btn-primary">Leggi di più</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card" style="width: 100%;">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/africa.jpg" alt="Disneyland Photo 1" class="img-fluid" id="img-state">
-                            <div class="card-body">
-                                <h5 class="card-title">AFRICA</h5>
+                    <?php
+                        }
+                    } else {
+                        echo 'Nessun articolo trovato nel custom post type.';
+                    }
 
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card" style="width: 100%;">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/asia.jpg" alt="Disneyland Photo 1" class="img-fluid" id="img-state">
-                            <div class="card-body">
-                                <h5 class="card-title">ASIA</h5>
-
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card" style="width: 100%;">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/america.jpg" alt="Disneyland Photo 1" class="img-fluid" id="img-state">
-                            <div class="card-body">
-                                <h5 class="card-title">AMERICA</h5>
-
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-
+                    wp_reset_postdata();
+                    ?>
                 </div>
             </div>
         </section>
+
+
+
+
+
+
+
+
 
         <div class="row mt-5 mx-5">
             <div class="col-12">
@@ -165,39 +165,6 @@ get_header(); ?>
 
         <!-- QUESTA RICEVE I POST START -->
 
-        <section class="destination-photos py-5">
-            <div class="container-fluid text-center ">
-
-                <h1>ARTICOLI CORRELATI</h1>
-                <div class="row gy-4 ">
-                    <?php
-
-                    if (have_posts()) :
-                        while (have_posts()) :
-                            the_post();
-                    ?>
-                            <div class="col-3 ">
-                                <div class="card" style="width: 100%;">
-                                    <?php if (has_post_thumbnail()) : ?>
-                                        <img src="<?php the_post_thumbnail_url('large'); ?>" alt="<?php the_title(); ?>" class="img-fluid">
-                                    <?php endif; ?>
-                                    <div class="card-body">
-                                        <h5 class="card-title"><?php the_title(); ?></h5>
-                                        <p class="card-text"><?php the_excerpt(); ?></p>
-                                        <a href="<?php the_permalink(); ?>" class="btn btn-primary"><?php _e('Read more', 'yourtheme'); ?></a>
-                                    </div>
-                                </div>
-                            </div>
-                    <?php
-                        endwhile;
-                    else :
-
-                        _e('Sorry, no posts found.', 'yourtheme');
-                    endif;
-                    ?>
-                </div>
-            </div>
-        </section>
 
         <!-- QUESTA RICEVE I POST END -->
 

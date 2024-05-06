@@ -10,7 +10,8 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?= site_url() ?>"><?php bloginfo('name') ?></a>
+            <img id="svg" class="me-2" src="<?php echo get_template_directory_uri(); ?>/assets/travel.svg" alt="">
+            <a id="siteName" class="navbar-brand" href="<?= site_url() ?>"><?php bloginfo('name') ?></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

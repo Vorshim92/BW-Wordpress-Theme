@@ -1,5 +1,4 @@
 <?php
-// wordpress ha già recuperato i dati giusti in base all'indirizzo dal database
 
 get_header();
 the_post(); ?>
@@ -46,7 +45,7 @@ if (isset($_POST['submit'])) {
 
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <header class="entry-header">
-                
+
             </header>
 
             <div class="entry-content">
@@ -67,7 +66,8 @@ if (isset($_POST['submit'])) {
 </div>
 
 
-<?php if(comments_open() || get_comments_number()) : comments_template(); endif ?>
+<?php if (comments_open() || get_comments_number()) : comments_template();
+endif ?>
 
 <?php
 get_footer();

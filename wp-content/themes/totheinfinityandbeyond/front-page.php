@@ -74,7 +74,7 @@ get_header(); ?>
                     ?>
                             <div class="col-3">
                                 <div class="card" style="width: 100%;">
-                                    <?php the_post_thumbnail('thumbnail', ['class' => 'img-fluid', 'id' => 'img-state']); ?>
+                                <?php the_post_thumbnail('custom-cover-thumbnail', ['class' => '', 'id' => 'img-state']); ?>
                                     <div class="card-body">
                                         <h5 class="card-title"><?php the_title(); ?></h5>
                                         <a href="<?php the_permalink(); ?>" class="btn btn-primary">Leggi di più</a>

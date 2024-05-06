@@ -1,25 +1,38 @@
 <footer class="footer mytheme">
-    <div class="container">
+    <div class="container p-3">
         <div class="row text-white">
-            <div class="col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <h5>About Us</h5>
-                <p><?php echo get_bloginfo('description'); ?></p>
+                <p  class="m-2">I nostri coordinatori</p>
+                <p  class="m-2">Community</p>
+                <p  class="m-2">Lavora con noi</p>
+                <p  class="m-2">Cosa dicono di noi su Trustpilot</p>
+                <p  class="m-2"><?php echo get_bloginfo('description'); ?></p>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-4 col-md-6">
                 <h5>Quick Links</h5>
                 <ul class="list-unstyled">
-                    <li><a href="<?php echo home_url(); ?>">Home</a></li>
-                    <li><a href="<?= site_url('/chi-siamo') ?>">Contact</a></li>
-
+                    <li><a  class="m-2" href="<?php echo home_url(); ?>">Home</a></li>
+                    <li><a  class="m-2" href="<?= site_url('/chi-siamo') ?>">Contact</a></li>
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-4 col-md-12">
                 <h5>Contact Us</h5>
-                <ul class="list-unstyled">
-                    <li>Address: <?php echo get_option('contact_address'); ?></li>
-                    <li>Phone: <?php echo get_option('contact_phone'); ?></li>
-                    <li>Email: <?php echo get_option('contact_email'); ?></li>
-                </ul>
+              
+                 
+                 <p class="m-2"><i class="bi bi-geo-alt-fill"></i></i> Address: 123 Main St, Cityville</p>
+                    <p class="m-2"><i class="bi bi-telephone-fill"></i> Phone: +123 456 7890</p>
+                    <p class="m-2"><i class="bi bi-envelope"></i></i> Email: info@example.com</p>
+                
+                
+            </div>
+            <p>"We travel © 2024 Tutti i diritti riservati."</p>
+            <hr>
+            <div class="col-12">
+                <i class="fs-4 mx-2 bi bi-facebook"></i>
+                <i class="fs-4 mx-2 bi bi-instagram"></i>
+                <i class="fs-4 mx-2 bi bi-whatsapp"></i>
+                <i class="fs-4 mx-2 bi bi-twitter"></i>
             </div>
         </div>
     </div>

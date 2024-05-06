@@ -23,12 +23,16 @@ footer {
  a{
   text-decoration: none;
   cursor: pointer;
-  color: black;
-  font-weight: bolder;
+  font-weight: bold;
  }
+
  .multiply{
-  background-color: rgba(0, 0, 0, 0.699);
+  background-color: rgba(0, 0, 0, 0.226);
   background-blend-mode: multiply;
+ }
+ .rose{
+  background-color: #F51F47!important;
+  border: none;
  }
 #carouselImg {
   height: 800px;

@@ -6,9 +6,11 @@ the_post(); ?>
 
     <h1><?php the_title(); ?></h1>
     <a href="<?php the_author_meta() ?>"></a>
-    <div class="row">
-    <!-- <img src="<?php the_post_thumbnail_url('large'); ?>" alt="<?php the_title(); ?>" class="img-fluid"> -->
-        <div class="col-12 col-md-9"> <?php the_content(); ?>
+    <img style="width:100% ;max-height:25rem;object-fit:cover" src="<?php the_post_thumbnail_url('custom-cover-thumbnail'); ?>" alt="<?php the_title(); ?>">
+    <div class="row pt-4 border-bottom">
+        <div class="col-12 col-md-9"> 
+
+            <?php the_content(); ?>
         </div>
         <div class="col-12 col-md-3">
             <p class="text-secondary">Altri articoli suggeriti per te</p>
@@ -63,7 +65,7 @@ the_post(); ?>
 ?>
 
 <div class="container pt-5">
-    <p class="text-secondary">Hai trovato utile questo articolo</p>
+    <h5 class="text-secondary">Se hai trovato utile questo articolo</h5>
 
 
     <?php if (comments_open() || get_comments_number()):

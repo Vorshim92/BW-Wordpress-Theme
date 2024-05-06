@@ -18,13 +18,9 @@ function theme_features()
 }
 add_action('after_setup_theme', 'theme_features');
 
-function create_sidebar_cards()
-{ ?>
-    <li><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></li><?php
-    }
 
-add_action('init', function()
-{
+
+add_action('init', function () {
     register_post_type('ttiab_reviews', [
         'supports' => ['title', 'editor', 'author', 'thumbnail'],
         'rewrite' => ['slug' => 'recensioni'],
@@ -33,18 +29,17 @@ add_action('init', function()
         'public' => true,
         'menu_icon' => 'dashicons-tickets-alt',
         'labels' => [
-            'name' => 'Recensioni',
-            'add_new_item' => 'Aggiungi Nuova Recensione',
-            'edit_item' => 'Modifica Nuova Recensione',
-            'all_items' => 'Tutte le Recensione',
-            'singular_name' => 'Recensione',
-            'archives' => 'Reward Programs',
-        ],
+                'name' => 'Recensioni',
+                'add_new_item' => 'Aggiungi Nuova Recensione',
+                'edit_item' => 'Modifica Nuova Recensione',
+                'all_items' => 'Tutte le Recensione',
+                'singular_name' => 'Recensione',
+                'archives' => 'Reward Programs',
+            ],
         'show_in_rest' => true,
     ]);
 });
-add_action('init', function()
-{
+add_action('init', function () {
     register_post_type('ttiab_trips', [
         'supports' => ['title', 'editor', 'author', 'thumbnail', 'page-attributes'],
         'rewrite' => ['slug' => 'viaggi'],
@@ -53,21 +48,43 @@ add_action('init', function()
         'public' => true,
         'menu_icon' => 'dashicons-tickets-alt',
         'labels' => [
-            'name' => 'Viaggi',
-            'add_new_item' => 'Aggiungi Nuovo Viaggio',
-            'edit_item' => 'Modifica Viaggio',
-            'all_items' => 'Tutte i Viaggi',
-            'singular_name' => 'Viaggio',
-            'archives' => 'Reward Programs',
-        ],
+                'name' => 'Viaggi',
+                'add_new_item' => 'Aggiungi Nuovo Viaggio',
+                'edit_item' => 'Modifica Viaggio',
+                'all_items' => 'Tutte i Viaggi',
+                'singular_name' => 'Viaggio',
+                'archives' => 'Reward Programs',
+            ],
         'show_in_rest' => true,
         'taxonomies' => ['category'],
-        'hierarchical'       => false,
+        'hierarchical' => false,
     ]);
 });
 
 // add categories for attachments
-function add_categories_for_attachments() {
-    register_taxonomy_for_object_type( 'category', 'attachment' );
+function add_categories_for_attachments()
+{
+    register_taxonomy_for_object_type('category', 'attachment');
 }
-add_action( 'init' , 'add_categories_for_attachments' );
+add_action('init', 'add_categories_for_attachments');
+add_action( 'admin_menu', 'add_user_menu_bubble' );
+
+function add_user_menu_bubble() {
+   global $wpdb;
+   global $menu;
+
+   $memo_count = wp_count_posts( 'ttiab_reviews' )->pending;
+
+  if ( $memo_count ) {
+
+    foreach ( $menu as $key => $value ) {
+
+      if ( $menu[$key][2] == 'edit.php?post_type=ttiab_reviews' ) {
+
+        $menu[$key][0] .= ' <span class="update-plugins">' . $memo_count . '</span>';
+
+        return;
+      }
+    }
+  }
+}

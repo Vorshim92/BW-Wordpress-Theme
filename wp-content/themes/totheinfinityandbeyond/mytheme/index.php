@@ -84,7 +84,38 @@ get_header(); ?>
 
 <!-- QUESTA RICEVE I POST START -->
 
+<section class="destination-photos py-5">
+    <div class="container-fluid text-center ">
+        <div class="row gy-4 ">
+            <?php
 
+            if (have_posts()):
+                while (have_posts()):
+                    the_post();
+                    ?>
+                    <div class="col-3 ">
+                        <div class="card" style="width: 100%;">
+                            <?php if (has_post_thumbnail()): ?>
+                                <img src="<?php the_post_thumbnail_url('large'); ?>" alt="<?php the_title(); ?>" class="img-fluid">
+                            <?php endif; ?>
+                            <div class="card-body">
+                                <h5 class="card-title"><?php the_title(); ?></h5>
+                                <p class="card-text"><?php the_excerpt(); ?></p>
+                                <a href="<?php the_permalink(); ?>"
+                                    class="btn btn-primary"><?php _e('Read more', 'yourtheme'); ?></a>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                endwhile;
+            else:
+
+                _e('Sorry, no posts found.', 'yourtheme');
+            endif;
+            ?>
+        </div>
+    </div>
+</section>
 
 <!-- QUESTA RICEVE I POST END -->
 

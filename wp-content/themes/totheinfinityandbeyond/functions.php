@@ -38,6 +38,9 @@ add_action('init', function () {
                 'archives' => 'Reward Programs',
             ],
         'show_in_rest' => true,
+        'taxonomies' => ['category'],
+        'hierarchical' => false,
+
     ]);
 });
 add_action('init', function () {

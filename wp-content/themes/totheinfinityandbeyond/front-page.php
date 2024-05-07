@@ -26,20 +26,19 @@ get_header(); ?>
                         if ($query->have_posts()) {
                             while ($query->have_posts()) {
                                 $query->the_post();
-                                ?>
+                        ?>
                                 <div class="carousel-item <?php if ($first_item) {
-                                    echo 'active';
-                                    $first_item = false;
-                                } ?>">
-                                    <img src="<?php the_post_thumbnail_url(); ?>" class="d-block w-100"
-                                        alt="Disneyland Photo 1" id="carouselImg">
+                                                                echo 'active';
+                                                                $first_item = false;
+                                                            } ?>">
+                                    <img src="<?php the_post_thumbnail_url(); ?>" class="d-block w-100" alt="Disneyland Photo 1" id="carouselImg">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5>Descrizione dello slide</h5>
                                         <p>Una breve descrizione dello slide...</p>
                                         <a href="<?php the_permalink(); ?>" class="btn btn-primary">Esplora</a>
                                     </div>
                                 </div>
-                                <?php
+                        <?php
                             }
                         } else {
                             echo 'Nessun articolo trovato nel custom post type.';
@@ -48,18 +47,16 @@ get_header(); ?>
                         wp_reset_postdata();
                         ?>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-            </div>
+
         </section>
 
 
@@ -82,7 +79,7 @@ get_header(); ?>
                     if ($query->have_posts()) {
                         while ($query->have_posts()) {
                             $query->the_post();
-                            ?>
+                    ?>
                             <div class="col-3">
                                 <div class="card" style="width: 100%;">
                                     <?php the_post_thumbnail('custom-cover-thumbnail', ['class' => '', 'id' => 'img-state']); ?>
@@ -92,7 +89,7 @@ get_header(); ?>
                                     </div>
                                 </div>
                             </div>
-                            <?php
+                    <?php
                         }
                     } else {
                         echo 'Nessun articolo trovato nel custom post type.';
@@ -117,8 +114,7 @@ get_header(); ?>
                 <section class="mb-5" id="section-details">
                     <div class="container-fluid" id="fadeInLeftBig">
                         <div class="row justify-content-start align-items-center g-2">
-                            <div class="col-6"><img src="<?php echo get_template_directory_uri(); ?>/assets/libri.jpg"
-                                    alt="">
+                            <div class="col-6"><img src="<?php echo get_template_directory_uri(); ?>/assets/libri.jpg" alt="">
                             </div>
                             <div class="col-6">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex provident expedita, iusto
@@ -143,8 +139,7 @@ get_header(); ?>
                                     suscipit
                                     maiores modi libero saepe corrupti laboriosam!</p>
                             </div>
-                            <div class="col-6"><img src="<?php echo get_template_directory_uri(); ?>/assets/fiori.jpg"
-                                    alt="">
+                            <div class="col-6"><img src="<?php echo get_template_directory_uri(); ?>/assets/fiori.jpg" alt="">
                             </div>
 
                         </div>
@@ -158,8 +153,7 @@ get_header(); ?>
                 <section id="section-details">
                     <div class="container-fluid " id="fadeInLeftBig">
                         <div class="row justify-content-start align-items-center g-2">
-                            <div class="col-6"><img src="<?php echo get_template_directory_uri(); ?>/assets/deserto.jpg"
-                                    alt="">
+                            <div class="col-6"><img src="<?php echo get_template_directory_uri(); ?>/assets/deserto.jpg" alt="">
                             </div>
                             <div class="col-6">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex provident expedita, iusto
@@ -183,8 +177,7 @@ get_header(); ?>
                                     suscipit
                                     maiores modi libero saepe corrupti laboriosam!</p>
                             </div>
-                            <div class="col-6"><img src="<?php echo get_template_directory_uri(); ?>/assets/city.jpg"
-                                    alt="">
+                            <div class="col-6"><img src="<?php echo get_template_directory_uri(); ?>/assets/city.jpg" alt="">
                             </div>
 
                         </div>

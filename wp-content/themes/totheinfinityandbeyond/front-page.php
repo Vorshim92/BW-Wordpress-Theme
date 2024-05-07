@@ -10,7 +10,7 @@ get_header(); ?>
 
 
         <section class="destination-photos pb-5">
-         
+            <div class="">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
 
@@ -36,7 +36,7 @@ get_header(); ?>
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5>Descrizione dello slide</h5>
                                         <p>Una breve descrizione dello slide...</p>
-                                        <a href="#" class="btn btn-primary">Esplora</a>
+                                        <a href="<?php the_permalink(); ?>" class="btn btn-primary">Esplora</a>
                                     </div>
                                 </div>
                                 <?php
@@ -59,7 +59,7 @@ get_header(); ?>
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-            
+            </div>
         </section>
 
 

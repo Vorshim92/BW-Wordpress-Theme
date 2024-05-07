@@ -11,8 +11,8 @@
 <div style="z-index: 1; position: relative;">
     <div class="cover-main" style="background-image: url('<?php the_post_thumbnail_url('thumbnail', ['id' => 'img-state']); ?>');">
         <div class="cover-contents">
-            <h1 class="movie-title">CIAONE</h1>
-            <h3 class="movie-overview">ANCHE A TE</h3>
+            <h1 class="trip-title">CIAONE</h1>
+            <h3 class="trip-overview">ANCHE A TE</h3>
 
             <div style="padding-top: 8px;">
                 <button class="btn-play">

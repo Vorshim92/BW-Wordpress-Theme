@@ -148,6 +148,7 @@
             /*
             Template Name: Aggiungi Articolo
             */
+
             if (isset($_POST['submit'])) {
                 $titolo = sanitize_text_field($_POST['titolo']);
                 $contenuto = wp_kses_post($_POST['contenuto']);
@@ -156,7 +157,9 @@
                     'post_content' => $contenuto,
                     'post_status' => 'pending',
                     'post_author' => get_current_user_id(),
-                    'post_type' => 'ttiab_reviews'
+                    'post_type' => 'ttiab_reviews',
+                    'post_category' => $current_post_categories,
+                    'post-thumbnails' => "url"
                 );
                 $post_id = wp_insert_post($nuovo_articolo);
                 if ($post_id) {

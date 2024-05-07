@@ -80,7 +80,7 @@ get_header(); ?>
                         while ($query->have_posts()) {
                             $query->the_post();
                     ?>
-                            <div class="col-3">
+                            <div class="col-xl-3 col-md-6">
                                 <div class="card" style="width: 100%;">
                                     <?php the_post_thumbnail('custom-cover-thumbnail', ['class' => '', 'id' => 'img-state']); ?>
                                     <div class="card-body">
@@ -113,10 +113,10 @@ get_header(); ?>
             <div class="col-12">
                 <section class="mb-5" id="section-details">
                     <div class="container-fluid" id="fadeInLeftBig">
-                        <div id="card-home" class="card  rounded-5">
+                        <div id="card-home" class="p-4 card  rounded-5">
                             <div class="row  justify-content-start align-items-center g-2">
-                                <div class="col-xl-6 col-lg-12"><img class="rounded-start-5" id="front-page-img" src="<?php echo get_template_directory_uri(); ?>/assets/ass-viaggio-ok-travel.jpg" alt=""></div>
-                                <div class="col-xl-6 col-lg-12 p-4">
+                                <div class="col-xl-6 col-lg-12"><img class="rounded-5" id="front-page-img" src="<?php echo get_template_directory_uri(); ?>/assets/ass-viaggio-ok-travel.jpg" alt=""></div>
+                                <div class="ps-3 col-xl-6 col-lg-12 ">
                                     <h2>IL BENESSERE DI VIAGGIARE</h2>
                                     <p>Il benessere di viaggiare è una ricerca interiore e un'esplorazione del mondo esterno che offre innumerevoli benefici per il corpo, la mente e lo spirito. Viaggiare ci permette di allontanarci dalla routine quotidiana, di aprire la mente a nuove culture, esperienze e prospettive. È un'opportunità per scoprire luoghi incredibili, incontrare persone interessanti e creare ricordi indelebili.
 
@@ -137,9 +137,9 @@ get_header(); ?>
             <div class="col-12 mb-5">
                 <section id="section-details">
                     <div class="container-fluid " id="fadeInRight">
-                        <div id="card-home" class="card  rounded-5">
+                        <div id="card-home" class="p-4 card  rounded-5">
                             <div class="row flex-wrap-reverse justify-content-start align-items-center g-2">
-                                <div class="col-xl-6 col-lg-12  p-4">
+                                <div class="col-xl-6 col-lg-12  ">
                                     <h2>ISPIRAZIONE E CRESCITA PERSONALE</h2>
                                     <p>Viaggiare è una fonte inesauribile di ispirazione e crescita personale. Oltre ai benefici già menzionati, ci sono numerosi altri modi in cui il viaggiare contribuisce al nostro benessere globale. </p>
                                     <ul>
@@ -167,7 +167,7 @@ get_header(); ?>
                                     </ul>
 
                                 </div>
-                                <div class="col-xl-6 col-lg-12"><img class="rounded-end-5" id="front-page-img" src="<?php echo get_template_directory_uri(); ?>/assets/2149153260.jpg" alt=""></div>
+                                <div class="col-xl-6 col-lg-12"><img class="rounded-5" id="front-page-img" src="<?php echo get_template_directory_uri(); ?>/assets/2149153260.jpg" alt=""></div>
                             </div>
                         </div>
                     </div>
@@ -179,10 +179,10 @@ get_header(); ?>
             <div class="col-12 mb-5">
                 <section id="section-details">
                     <div class="container-fluid " id="fadeInLeftBig">
-                        <div id="card-home" class="card  rounded-5">
+                        <div id="card-home" class="p-4 card  rounded-5">
                             <div class="row  justify-content-start align-items-center g-2">
-                                <div class="col-xl-6 col-lg-12"><img id="front-page-img" class="rounded-start-5" src="<?php echo get_template_directory_uri(); ?>/assets/iStock-527115069.jpg" alt=""></div>
-                                <div class="col-xl-6 col-lg-12 p-4">
+                                <div class="col-xl-6 col-lg-12"><img id="front-page-img" class="rounded-5" src="<?php echo get_template_directory_uri(); ?>/assets/iStock-527115069.jpg" alt=""></div>
+                                <div class="col-xl-6 col-lg-12 ">
 
                                     <h2>RESPONSABILE E SOSTENIBILE</h2>
                                     <p>Attraverso il turismo responsabile e sostenibile, possiamo contribuire alla conservazione dell'ambiente e al sostegno delle comunità locali. Il viaggiare ci offre l'opportunità di connetterci con la natura, di apprezzare la sua bellezza e di impegnarci nella sua protezione.
@@ -201,9 +201,9 @@ get_header(); ?>
             <div class="col-12 mb-5">
                 <section id="section-details">
                     <div class="container-fluid " id="fadeInRight">
-                        <div id="card-home" class="card  rounded-5">
+                        <div id="card-home" class="p-4 card  rounded-5">
                             <div class="row flex-wrap-reverse justify-content-start align-items-center g-2">
-                                <div class="col-xl-6 col-lg-12 p-4">
+                                <div class="ps-3 col-xl-6 col-lg-12 ">
                                     <h2>CONCLUSIONE</h2>
                                     <p>
                                         In conclusione, il viaggiare è molto più di una semplice attività ricreativa; è un'esperienza che arricchisce il nostro essere in molti modi. Oltre a offrirci momenti di relax e divertimento, il viaggiare ci spinge a esplorare, imparare e crescere, contribuendo al nostro benessere fisico, mentale e spirituale. <br>
@@ -216,7 +216,7 @@ get_header(); ?>
 
                                         Perciò, che si tratti di un'avventura lontana o di una gita nel parco locale, prendersi il tempo per viaggiare è un investimento prezioso nel nostro benessere complessivo e una testimonianza del desiderio innato dell'essere umano di esplorare, scoprire e crescere.</p>
                                 </div>
-                                <div class="col-xl-6 col-lg-12"><img id="front-page-img" class="rounded-end-5" src="<?php echo get_template_directory_uri(); ?>/assets/city.jpg" alt=""></div>
+                                <div class="col-xl-6 col-lg-12"><img id="front-page-img" class="rounded-5" src="<?php echo get_template_directory_uri(); ?>/assets/city.jpg" alt=""></div>
 
                             </div>
                         </div>

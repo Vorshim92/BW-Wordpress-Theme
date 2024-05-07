@@ -10,10 +10,9 @@ get_header(); ?>
 
 
         <section class="destination-photos pb-5">
-            <div class="container-fluid ">
+            <div class="container-fluid">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-
 
                         <?php
                         $args = array(
@@ -22,15 +21,18 @@ get_header(); ?>
                         );
 
                         $query = new WP_Query($args);
+                        $first_item = true;
 
                         if ($query->have_posts()) {
                             while ($query->have_posts()) {
                                 $query->the_post();
                                 ?>
-
-                                <div class="carousel-item active">
-                                    <img src="<?php the_post_thumbnail_url(); ?>" class="d-block w-100" alt="Disneyland Photo 1"
-                                        alt="Disneyland Photo 1" id="carouselImg">
+                                <div class="carousel-item <?php if ($first_item) {
+                                    echo 'active';
+                                    $first_item = false;
+                                } ?>">
+                                    <img src="<?php the_post_thumbnail_url(); ?>" class="d-block w-100"
+                                        alt="Disneyland Photo 1">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5>Descrizione dello slide</h5>
                                         <p>Una breve descrizione dello slide...</p>
@@ -45,7 +47,6 @@ get_header(); ?>
 
                         wp_reset_postdata();
                         ?>
-
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                         data-bs-slide="prev">
@@ -60,7 +61,6 @@ get_header(); ?>
                 </div>
             </div>
         </section>
-
 
 
 

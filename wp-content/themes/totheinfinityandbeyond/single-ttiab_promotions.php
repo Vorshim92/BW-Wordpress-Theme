@@ -1,12 +1,4 @@
 <?php get_header(); ?>
-<?php $current_post_id = get_the_ID();
-        $current_post_categories = wp_get_post_categories($current_post_id);
-        
-        $args = array(
-            'category__in' => $current_post_categories,
-            'posts_per_page' => 5
-        );
-        ?>
 
 <div style="z-index: 1; position: relative;">
     <div class="cover-main" style="background-image: url('<?php the_post_thumbnail_url('thumbnail', ['id' => 'img-state']); ?>');">
@@ -38,12 +30,7 @@
             <p class="text-secondary">Hotel suggeriti per te</p>
 
     <?php
-
-
-                $sidebar_posts = new WP_Query(array(
-                    'category__in' => $current_post_categories,
-                    'posts_per_page' => 5,
-                    'post_type' => 'ttiab_promotions'));
+                $sidebar_posts = new WP_Query(array('posts_per_page' => 5));
                 while ($sidebar_posts->have_posts()):
                     $sidebar_posts->the_post();
 
@@ -58,6 +45,7 @@
                                 </div>
                                 <div class="col-6">
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                <p class="text-secondary">Autore: <?php the_author(); ?></p>
                                 <p class="text-secondary">Pubblicato il: <?php the_date(); ?></p>
                                 </div>
                             </div>
@@ -80,9 +68,14 @@
     <div class="row py-3 gy-4">
 
         <?php
-       
-        
-           
+        $categories = get_the_category();
+        if (!empty($categories)) {
+            foreach ($categories as $category) {
+                $cat_id = $category->term_id;
+                $args = array(
+                    'cat' => $cat_id,
+                    'posts_per_page' => -1
+                );
                 $query = new WP_Query($args);
                 if ($query->have_posts()) { ?>
                     <div class="col-12 col-md-8">
@@ -104,10 +97,14 @@
                             <?php } ?>
                         </div>
                     </div>
-                <?php } 
+                <?php } else {
+                    echo 'Nessun articolo trovato nella categoria con ID ' . $cat_id . '.';
+                }
                 wp_reset_postdata();
-            
-            ?>
+            }
+        } else {
+            echo 'Il post non ha categorie associate.';
+        } ?>
 
         <div class="col-12 col-md-4 border p-4 rounded">
             <?php

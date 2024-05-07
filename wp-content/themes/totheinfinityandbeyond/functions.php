@@ -61,6 +61,27 @@ add_action('init', function () {
         'hierarchical' => false,
     ]);
 });
+add_action('init', function () {
+    register_post_type('ttiab_promotions', [
+        'supports' => ['title', 'editor', 'author', 'thumbnail', 'page-attributes'],
+        'rewrite' => ['slug' => 'promozioni'],
+        'delete_with_user' => false,
+        'has_archive' => true,
+        'public' => true,
+        'menu_icon' => 'dashicons-tickets-alt',
+        'labels' => [
+                'name' => 'Promozioni',
+                'add_new_item' => 'Aggiungi Nuova Promozione',
+                'edit_item' => 'Modifica Promozione',
+                'all_items' => 'Tutte le Promozioni',
+                'singular_name' => 'Promozione',
+                'archives' => 'Reward Programs',
+            ],
+        'show_in_rest' => true,
+        'taxonomies' => ['category'],
+        'hierarchical' => false,
+    ]);
+});
 
 // add categories for attachments
 function add_categories_for_attachments()

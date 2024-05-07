@@ -10,7 +10,7 @@ get_header(); ?>
 
 
         <section class="destination-photos pb-5">
-            <div class="container-fluid">
+         
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
 
@@ -32,7 +32,7 @@ get_header(); ?>
                                     $first_item = false;
                                 } ?>">
                                     <img src="<?php the_post_thumbnail_url(); ?>" class="d-block w-100"
-                                        alt="Disneyland Photo 1">
+                                        alt="Disneyland Photo 1" id="carouselImg">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5>Descrizione dello slide</h5>
                                         <p>Una breve descrizione dello slide...</p>
@@ -59,7 +59,7 @@ get_header(); ?>
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-            </div>
+            
         </section>
 
 

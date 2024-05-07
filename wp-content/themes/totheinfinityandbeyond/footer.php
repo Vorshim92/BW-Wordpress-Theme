@@ -1,6 +1,6 @@
-<footer class="footer mytheme">
+<footer class="footer mytheme mt-5">
     <div class="container p-3">
-        <div class="row gy-3 text-white text-start">
+        <div class="row gy-3 text-start">
             <div class="col-12 col-md-4">
                 <h5>About Us</h5>
                 <p class="m-2">I nostri coordinatori</p>

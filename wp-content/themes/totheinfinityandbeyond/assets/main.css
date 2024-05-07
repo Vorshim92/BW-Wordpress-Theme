@@ -1,8 +1,13 @@
-/* body {
-  background-image: url(https://images.unsplash.com/photo-1713464238868-666e916225af?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
+body {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 36%, rgba(131, 231, 255, 1) 100%);
+}
+.nav-link {
+  font-weight: bold;
+}
+#card-home {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
 
 img {
   max-width: 100%;
@@ -21,7 +26,8 @@ img {
 footer {
   text-align: center;
   min-height: 100px;
-  background-color: rgba(20, 1, 56, 0.651);
+  background: none;
+  color: black;
 }
 .container label {
   display: block;
@@ -153,7 +159,7 @@ iframe {
 }
 
 .card {
-  box-shadow: 0px 13px 3px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
   transition: transform 0.2s ease;
 }
 .card:hover {
@@ -165,7 +171,6 @@ iframe {
 }
 
 #front-page-img {
-  border-radius: 10px;
 }
 
 #img-state {

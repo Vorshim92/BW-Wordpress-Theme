@@ -1,7 +1,29 @@
 <?php get_header(); ?>
 
+<div style="z-index: 1; position: relative;">
+    <div class="cover-main">
+        <div class="cover-contents">
+            <h1 class="movie-title">CIAONE</h1>
+            <h3 class="movie-overview">ANCHE A TE</h3>
+
+            <div style="padding-top: 8px;">
+                <button class="btn-play">
+                    <i class="fa fa-play"></i> Play
+                </button>
+
+                <button class="btn-more">
+                    <i class="fa fa-info-circle"></i> More Info
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- For faded cover effect -->
+    <div class="faded-bottom"></div>
+</div>
+
 <div class="container">
-    <!-- inizio articoli -->
+    
+    <!-- Inizio articoli -->
     <div class="row py-3 gy-4">
 
         <?php

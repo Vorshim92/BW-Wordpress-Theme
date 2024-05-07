@@ -10,7 +10,7 @@ get_header(); ?>
 
 
         <section class="destination-photos pb-5">
-            <div class="container-fluid">
+            <div class="">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
 
@@ -28,14 +28,15 @@ get_header(); ?>
                                 $query->the_post();
                         ?>
                                 <div class="carousel-item <?php if ($first_item) {
-                                                                echo 'active';
-                                                                $first_item = false;
-                                                            } ?>">
-                                    <img src="<?php the_post_thumbnail_url(); ?>" class="d-block w-100" alt="Disneyland Photo 1">
+                                    echo 'active';
+                                    $first_item = false;
+                                } ?>">
+                                    <img src="<?php the_post_thumbnail_url(); ?>" class="d-block w-100"
+                                        alt="Disneyland Photo 1">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5>Descrizione dello slide</h5>
                                         <p>Una breve descrizione dello slide...</p>
-                                        <a href="#" class="btn btn-primary">Esplora</a>
+                                        <a href="<?php the_permalink(); ?>" class="btn btn-primary">Esplora</a>
                                     </div>
                                 </div>
                         <?php

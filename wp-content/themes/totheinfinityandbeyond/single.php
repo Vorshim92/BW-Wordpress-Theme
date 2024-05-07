@@ -17,17 +17,25 @@ the_post(); ?>
 
             <?php
             $current_post_id = get_the_ID();
+            $current_post_categories = wp_get_post_categories($current_post_id)
             ?>
 
             <div class="row gy-2">
 
 
                 <?php
-                $sidebar_posts = new WP_Query(array('posts_per_page' => 5));
+             {
+                $args = array(
+                            'posts_per_page' => 5,
+                            'category__in' => $current_post_categories,
+                            'post__not_in' => array($current_post_id)
+                        );
+
+                $sidebar_posts = new WP_Query($args);
                 while ($sidebar_posts->have_posts()):
                     $sidebar_posts->the_post();
 
-                    if (get_the_ID() != $current_post_id) {
+                  
 
                         ?>
                         <div class="col-12 border-bottom pb-2">
@@ -47,10 +55,10 @@ the_post(); ?>
                         </div>
 
                         <?php
-                    }
+                    
                 endwhile;
-                wp_reset_postdata();
-                ?>
+                wp_reset_postdata(); }
+               ?>
 
             </div>
         </div>

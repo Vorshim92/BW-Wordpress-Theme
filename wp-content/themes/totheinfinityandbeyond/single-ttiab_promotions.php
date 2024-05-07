@@ -35,7 +35,7 @@
         </div>
 
 <div class="col-12 col-md-3">
-            <p class="text-secondary">Hotel suggeriti per te</p>
+            <p class="text-secondary">Altri Hotel per te</p>
 
     <?php
 
@@ -43,7 +43,8 @@
                 $sidebar_posts = new WP_Query(array(
                     'category__in' => $current_post_categories,
                     'posts_per_page' => 5,
-                    'post_type' => 'ttiab_promotions'));
+                    'post_type' => 'ttiab_promotions',
+                    'post__not_in' => array($current_post_id)));
                 while ($sidebar_posts->have_posts()):
                     $sidebar_posts->the_post();
 

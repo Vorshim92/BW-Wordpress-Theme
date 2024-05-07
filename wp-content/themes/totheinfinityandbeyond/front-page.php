@@ -38,6 +38,7 @@ get_header(); ?>
                                         <a href="<?php the_permalink(); ?>" class="btn btn-primary">Esplora</a>
                                     </div>
                                 </div>
+
                         <?php
                             }
                         } else {
@@ -55,8 +56,10 @@ get_header(); ?>
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
+
                 </div>
             </div>
+
         </section>
 
 

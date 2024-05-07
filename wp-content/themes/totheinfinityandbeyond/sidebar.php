@@ -5,10 +5,10 @@ $posts_for_aside = new WP_Query([
     'orderby'  => 'rand',
 ]); ?>
 
-<ul><?php
+<?php
     while ($posts_for_aside->have_posts()) {
         $posts_for_aside->the_post();
         create_sidebar_cards();
     }
-    wp_reset_postdata(); ?>
-</ul>
+    wp_reset_postdata();
+     ?>

@@ -10,33 +10,42 @@ get_header(); ?>
 
 
         <section class="destination-photos pb-5">
-            <div class="container-fluid ">
+            <div class="container-fluid">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/asia.jpg" class="d-block w-100" alt="Disneyland Photo 1" id="carouselImg">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Descrizione dello slide</h5>
-                                <p>Una breve descrizione dello slide...</p>
-                                <a href="#" class="btn btn-primary">Esplora</a>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/africa.jpg" class="d-block w-100" alt="Disneyland Photo 2" id="carouselImg">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Descrizione dello slide</h5>
-                                <p>Una breve descrizione dello slide...</p>
-                                <a href="#" class="btn btn-primary">Esplora</a>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/europa.jpg" class="d-block w-100" alt="Disneyland Photo 3" id="carouselImg">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Descrizione dello slide</h5>
-                                <p>Una breve descrizione dello slide...</p>
-                                <a href="#" class="btn btn-primary">Esplora</a>
-                            </div>
-                        </div>
+
+                        <?php
+                        $args = array(
+                            'post_type' => 'ttiab_trips',
+                            'posts_per_page' => -1
+                        );
+
+                        $query = new WP_Query($args);
+                        $first_item = true;
+
+                        if ($query->have_posts()) {
+                            while ($query->have_posts()) {
+                                $query->the_post();
+                        ?>
+                                <div class="carousel-item <?php if ($first_item) {
+                                                                echo 'active';
+                                                                $first_item = false;
+                                                            } ?>">
+                                    <img src="<?php the_post_thumbnail_url(); ?>" class="d-block w-100" alt="Disneyland Photo 1">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Descrizione dello slide</h5>
+                                        <p>Una breve descrizione dello slide...</p>
+                                        <a href="#" class="btn btn-primary">Esplora</a>
+                                    </div>
+                                </div>
+                        <?php
+                            }
+                        } else {
+                            echo 'Nessun articolo trovato nel custom post type.';
+                        }
+
+                        wp_reset_postdata();
+                        ?>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -49,7 +58,6 @@ get_header(); ?>
                 </div>
             </div>
         </section>
-
 
 
 
@@ -74,7 +82,7 @@ get_header(); ?>
                     ?>
                             <div class="col-3">
                                 <div class="card" style="width: 100%;">
-                                    <?php the_post_thumbnail('thumbnail', ['class' => 'img-fluid', 'id' => 'img-state']); ?>
+                                    <?php the_post_thumbnail('custom-cover-thumbnail', ['class' => '', 'id' => 'img-state']); ?>
                                     <div class="card-body">
                                         <h5 class="card-title"><?php the_title(); ?></h5>
                                         <a href="<?php the_permalink(); ?>" class="btn btn-primary">Leggi di più</a>
@@ -217,7 +225,6 @@ get_header(); ?>
 
     </main>
 </div>
-
 
 
 

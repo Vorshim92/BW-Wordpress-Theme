@@ -14,18 +14,41 @@ img {
   text-transform: uppercase;
 }
 
+.navbar img{
+  max-width: 7rem;
+  margin-right: 5rem;
+}
 footer {
   text-align: center;
   min-height: 100px;
   background-color: rgba(20, 1, 56, 0.651);
 }
+.container label{
+  display: block;
+}
+ a{
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+ }
 
+ .multiply{
+  background-color: rgba(0, 0, 0, 0.226);
+  background-blend-mode: multiply;
+ }
+ .rose{
+  background-color: #F51F47!important;
+  border: none;
+ }
 #carouselImg {
   height: 800px;
   max-height: 1000px;
   object-fit: cover;
 }
-
+iframe{
+  width: 100% !important;
+  height: 55vh!important;
+}
 #fadeInLeftBig {
   -webkit-animation-name: fadeInLeftBig;
   animation-name: fadeInLeftBig;

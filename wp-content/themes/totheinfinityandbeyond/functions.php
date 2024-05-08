@@ -165,3 +165,9 @@ function wpsnipp_remove_default_taxonomies()
     }
 }
 add_action('init', 'wpsnipp_remove_default_taxonomies');
+function remove_pages_from_admin_menu()
+{
+    remove_menu_page('edit.php?post_type=page');
+}
+
+add_action('admin_menu', 'remove_pages_from_admin_menu');

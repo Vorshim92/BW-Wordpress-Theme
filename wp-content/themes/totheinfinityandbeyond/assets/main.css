@@ -1,10 +1,12 @@
 body {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 36%, rgba(131, 231, 255, 1) 100%);
+  /* background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 36%, rgba(131, 231, 255, 1) 100%); */
 }
+
 .nav-link {
   font-weight: bold;
 }
+
 #card-home {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
@@ -12,27 +14,61 @@ body {
 img {
   max-width: 100%;
 }
+
 #svg {
   width: 2%;
 }
+
 #siteName {
   text-transform: uppercase;
 }
 
+.fw-7 {
+  font-weight: 700;
+}
+
+.blue {
+  background-color: #CDE4F7 !important;
+}
+
+.yellow {
+  background-color: #FBF8F3 !important;
+}
+
+.wl {
+  background-color: #DEDDDF !important;
+}
+
+.navbar {
+  position: fixed !important;
+  z-index: 222;
+  width: 100%;
+  top: 0px;
+  background-color: #00000075 !important;
+  color: white !important;
+}
 
 .navbar img {
   max-width: 7rem;
   margin-right: 5rem;
 }
+
+.dk {
+  background: #151515;
+}
+
 footer {
+  padding-top: 2rem;
   text-align: center;
   min-height: 100px;
-  background: none;
-  color: black;
+  background: #151515;
+  color: white;
 }
+
 .container label {
   display: block;
 }
+
 a {
   text-decoration: none;
   cursor: pointer;
@@ -43,19 +79,23 @@ a {
   background-color: rgba(0, 0, 0, 0.226);
   background-blend-mode: multiply;
 }
+
 .rose {
   background-color: #f51f47 !important;
   border: none;
 }
+
 #carouselImg {
   height: 800px;
   max-height: 1000px;
   object-fit: cover;
 }
+
 iframe {
   width: 100% !important;
   height: 55vh !important;
 }
+
 #fadeInLeftBig {
   -webkit-animation-name: fadeInLeftBig;
   animation-name: fadeInLeftBig;
@@ -115,18 +155,21 @@ iframe {
     -webkit-transform: translate3d(-2000px, 0, 0);
     transform: translate3d(-2000px, 0, 0);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: none;
     transform: none;
   }
 }
+
 @keyframes fadeInLeftBig {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(-2000px, 0, 0);
     transform: translate3d(-2000px, 0, 0);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: none;
@@ -142,24 +185,28 @@ iframe {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
+
 @-webkit-keyframes fadeInRight {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: none;
     transform: none;
   }
 }
+
 @keyframes fadeInRight {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: none;
@@ -175,29 +222,35 @@ iframe {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
+
 @-webkit-keyframes pulse {
   0% {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
+
   50% {
     -webkit-transform: scale3d(1.05, 1.05, 1.05);
     transform: scale3d(1.05, 1.05, 1.05);
   }
+
   100% {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
 }
+
 @keyframes pulse {
   0% {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
+
   50% {
     -webkit-transform: scale3d(1.05, 1.05, 1.05);
     transform: scale3d(1.05, 1.05, 1.05);
   }
+
   100% {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
@@ -207,17 +260,17 @@ iframe {
 .card {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
   transition: transform 0.2s ease;
+  overflow: hidden;
 }
+
 .card:hover {
   transform: translateY(-10px);
   transition: 0.5;
 }
 
-#section-details {
-}
+#section-details {}
 
-#front-page-img {
-}
+#front-page-img {}
 
 #img-state {
   height: 180px;
@@ -238,6 +291,7 @@ iframe {
   display: flex;
   z-index: 1;
 }
+
 .trip-title {
   font-size: 80px;
   line-height: normal;
@@ -256,6 +310,7 @@ iframe {
   line-height: 1.6;
   z-index: 2;
 }
+
 .btn-play {
   background-color: white;
   border: 1px solid white;
@@ -326,6 +381,7 @@ iframe {
     margin-right: 8px;
     cursor: pointer;
   }
+
   .btn-more {
     background-color: #545455;
     border: 1px solid #545455;
@@ -348,6 +404,7 @@ iframe {
     z-index: 2;
   }
 }
+
 .comment-form-comment {
   display: flex;
   flex-direction: column;

@@ -145,7 +145,7 @@ $args = array(
         </div>
 
     </div>
-    <div class="col-12 col-md-4">
+    <div class="col-12">
         <?php
         echo do_shortcode('[custom_add_review]');
         ?>

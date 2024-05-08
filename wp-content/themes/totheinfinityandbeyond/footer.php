@@ -20,8 +20,8 @@
             <div class="col-12 col-md-4">
                 <h5>Quick Links</h5>
                 <ul class="list-unstyled">
-                    <li><a class="m-2 fw-semibold" href="<?php echo home_url(); ?>">Home</a></li>
-                    <li><a class="m-2 fw-semibold" href="<?= site_url('/chi-siamo') ?>">Contact</a></li>
+                    <li><p class="m-2 fw-semibold" >Home</p></li>
+                    <li><p class="m-2 fw-semibold" >Contact</p></li>
                 </ul>
             </div>
             <span class="text-center">"We travel © 2024 Tutti i diritti riservati."</span>

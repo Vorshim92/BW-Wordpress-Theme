@@ -38,14 +38,45 @@ img {
 .wl {
   background-color: #DEDDDF !important;
 }
+.bg-he{
+  background-color: #14141493!important;
+  width: 100%;
+  height: 65rem;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.bebas {
+
+color: #DF9F05!important;
+
+  font-size: 80px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.bebas2 { 
+  background-clip: text;
+ 
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
 
 .navbar {
   position: fixed !important;
   z-index: 222;
   width: 100%;
   top: 0px;
-  background-color: #00000075 !important;
+  background-color: #0000002a !important;
   color: white !important;
+  transition: all 0.5s ease-in-out;
+}
+
+.nb2 {
+  background-color: #000000ef !important;
 }
 
 .navbar img {
@@ -62,6 +93,20 @@ footer {
   text-align: center;
   min-height: 100px;
   background: #151515;
+  color: #E09F05;
+
+}
+
+footer h5 {
+  color: white;
+  padding-bottom: 2rem;
+}
+
+footer p {
+  font-weight: 300;
+}
+
+footer i {
   color: white;
 }
 

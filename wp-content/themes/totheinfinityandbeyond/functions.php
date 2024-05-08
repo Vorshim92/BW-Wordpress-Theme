@@ -126,18 +126,3 @@ add_shortcode('custom_add_review', function () {
 });
 ?>
 <!-- funzione per il colore del navbar -->
-<?php
-function colorNavbarAtScroll($scrollThreshold, $colorWhenScrolled, $colorDefault) {
-    // Verifica se la pagina è stata scrollata oltre una certa soglia
-    if (isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], $_SERVER['REQUEST_URI']) !== false && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
-        if (isset($_SERVER['HTTP_REFERER'])) {
-            $scroll = $_SERVER['HTTP_REFERER'];
-            if ($scroll > $scrollThreshold) {
-                echo "style='background-color: $colorWhenScrolled;'";
-            } else {
-                echo "style='background-color: $colorDefault;'";
-            }
-        }
-    }
-}
-?>

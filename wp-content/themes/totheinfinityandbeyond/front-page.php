@@ -27,17 +27,29 @@ get_header(); ?>
                             while ($query->have_posts()) {
                                 $query->the_post();
                                 ?>
-                                <div class="carousel-item <?php if ($first_item) {
+                                <div class="carousel-item  <?php if ($first_item) {
                                     echo 'active';
                                     $first_item = false;
                                 } ?>">
-                                    <img src="<?php the_post_thumbnail_url(); ?>" id="carouselImg" class="d-block w-100"
-                                        alt="Disneyland Photo 1">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>Descrizione dello slide</h5>
-                                        <p>Una breve descrizione dello slide...</p>
-                                        <a href="<?php the_permalink(); ?>" class="btn btn-primary">Esplora</a>
+
+                                    <div class="bg-he d-block w-100 d-flex justify-content-center
+                                    align-items-center"
+                                        style="background-image: url('<?php the_post_thumbnail_url(); ?>');" id="carouselImg">
+                                        <div class="text-white">
+                                            <h2 class="display-4">Prepara lo zaino, gli amici li portiamo noi</h2>
+                                            <p class="text-center">Nuove mete ogni mese resta sincronizzato</p>
+                                            <h1 class="bebas text-center"><?php the_title() ?></h1>
+                                            <p class="display-6 text-center py-5">Scopri il mondo viaggiando in piccoli gruppi
+                                            </p>
+
+                                            <div class="text-center">
+                                                <a href="<?php the_permalink(); ?>" class="btn-play">Esplora</a>
+                                            </div>
+                                        </div>
                                     </div>
+
+
+
                                 </div>
 
                                 <?php
@@ -64,11 +76,6 @@ get_header(); ?>
             </div>
 
         </section>
-
-
-
-
-
 
         <section class="destination-photos py-5" id="pulse">
             <div class="container text-center">
@@ -217,197 +224,159 @@ get_header(); ?>
                 <hr>
             </div>
         </div>
+        <!-- -------------------------------------------------------- -->
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-12">
+                    <h1 class="text-center fw-7 pb-5 mb-5">Perchè è importatnte viaggiare?</h1>
+                </div>
+                <div class="col-12">
 
-        <div class="row m-5 ">
-            <div class="col-12">
-                <section class="mb-5" id="section-details">
-                    <div class="container-fluid" id="fadeInLeftBig">
-                        <div id="card-home" class="p-4 card  rounded-5">
-                            <div class="row  justify-content-start align-items-center g-2">
-                                <div class="col-xl-6 col-lg-12"><img class="rounded-5" id="front-page-img"
-                                        src="<?php echo get_template_directory_uri(); ?>/assets/ass-viaggio-ok-travel.jpg"
-                                        alt=""></div>
-                                <div class="ps-3 col-xl-6 col-lg-12 ">
-                                    <h2>IL BENESSERE DI VIAGGIARE</h2>
-                                    <p>Il benessere di viaggiare è una ricerca interiore e un'esplorazione del mondo
-                                        esterno che offre innumerevoli benefici per il corpo, la mente e lo spirito.
-                                        Viaggiare ci permette di allontanarci dalla routine quotidiana, di aprire la
-                                        mente a nuove culture, esperienze e prospettive. È un'opportunità per scoprire
-                                        luoghi incredibili, incontrare persone interessanti e creare ricordi indelebili.
+                    <div class="container pb-5">
 
-                                        Uno dei maggiori benefici del viaggiare è il suo impatto positivo sulla salute
-                                        mentale.
-                                        Lontani dalle preoccupazioni e dallo stress della vita quotidiana, possiamo
-                                        rilassarci, rigenerarci e ricaricare le batterie. Attraverso l'esplorazione di
-                                        luoghi nuovi, stimoliamo la nostra creatività e aumentiamo il senso di
-                                        meraviglia e gratitudine per il mondo che ci circonda.
-                                        Inoltre, viaggiare ci sfida a essere flessibili, adattabili e aperti al
-                                        cambiamento. Affrontiamo nuove situazioni, superiamo le barriere linguistiche e
-                                        culturali e impariamo a risolvere i problemi in modo efficace. Queste esperienze
-                                        ci rendono più resilienti e ci insegnano preziose lezioni di vita.
+                        <div class="row rounded">
+                            <div class="col-12 col-lg-4"><img style="width:100%;height:100%;object-fit:cover"
+                                    src="<?php echo get_template_directory_uri(); ?>/assets/ass-viaggio-ok-travel.jpg"
+                                    alt=""></div>
+                            <div class="col-12 col-lg-8 ">
+                                <div class="px-5 pt-4">
+                                    <h4 class="fw-7">Il benessere di viaggiare</h4>
+                                    <p class="text-secondary">
+                                        Il viaggiare è una ricerca interiore e un'esplorazione del mondo esterno che
+                                        porta innumerevoli benefici per il corpo, la mente e lo spirito. Ci permette di
+                                        allontanarci dalla routine quotidiana, aprendo la mente a nuove culture,
+                                        esperienze e prospettive. È un'opportunità per scoprire luoghi incredibili,
+                                        incontrare persone interessanti e creare ricordi indelebili.
 
-                                        Non possiamo ignorare l'impatto positivo che il viaggiare ha sulla nostra salute
-                                        fisica. Esplorando nuovi luoghi, spesso ci impegniamo in attività all'aria
-                                        aperta come escursioni, nuoto o passeggiate, che favoriscono il movimento e il
-                                        benessere fisico. Inoltre, viaggiando possiamo sperimentare una dieta più varia
-                                        e nutriente, arricchendo il nostro corpo con sapori e alimenti locali.</p>
-                                </div>
+                                        Uno dei suoi maggiori benefici è l'impatto positivo sulla salute mentale.
+                                        Lontani dallo stress quotidiano, possiamo rilassarci, rigenerarci e ricaricare
+                                        le batterie. Esplorando nuovi luoghi, stimoliamo la creatività e aumentiamo il
+                                        senso di meraviglia e gratitudine per il mondo. Viaggiare ci sfida ad essere
+                                        flessibili, adattabili e aperti al cambiamento, rendendoci più resilienti e
+                                        insegnandoci preziose lezioni di vita.
 
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-            </div>
-
-            <div class="col-12 mb-5">
-                <section id="section-details">
-                    <div class="container-fluid " id="fadeInRight">
-                        <div id="card-home" class="p-4 card  rounded-5">
-                            <div class="row flex-wrap-reverse justify-content-start align-items-center g-2">
-                                <div class="col-xl-6 col-lg-12  ">
-                                    <h2>ISPIRAZIONE E CRESCITA PERSONALE</h2>
-                                    <p>Viaggiare è una fonte inesauribile di ispirazione e crescita personale. Oltre ai
-                                        benefici già menzionati, ci sono numerosi altri modi in cui il viaggiare
-                                        contribuisce al nostro benessere globale. </p>
-                                    <ul>
-                                        <li>
-                                            Espansione delle prospettive: Viaggiando, siamo esposti a nuove idee,
-                                            tradizioni e punti di vista, che ci aiutano a sviluppare una mente aperta e
-                                            inclusiva.
-
-                                        </li>
-                                        <li>Aumento della fiducia in sé stessi: Affrontare nuove sfide e situazioni
-                                            durante i viaggi ci permette di superare i nostri limiti e di acquisire
-                                            fiducia nelle nostre capacità.</li>
-
-                                        <li>
-                                            Riduzione dello stress: Lontani dalla routine quotidiana, possiamo
-                                            scollegarci dalle preoccupazioni e dallo stress, favorendo una maggiore
-                                            serenità e tranquillità mentale.
-
-                                        </li>
-                                        <li>Stimolazione sensoriale: Esplorando nuovi luoghi, ci immergiamo in
-                                            esperienze sensoriali uniche, attraverso la vista, il suono, il gusto, il
-                                            tatto e l'odore, che stimolano i nostri sensi e ci rendono più consapevoli
-                                            del mondo circostante.</li>
-                                        <li>Crescita personale: Il viaggiare ci spinge al di fuori della nostra zona di
-                                            comfort, ci costringe a fare scelte e ci offre l'opportunità di imparare e
-                                            crescere costantemente.</li>
-                                        <li>
-                                            Memorie indelebili: Le esperienze di viaggio sono spesso tra le più
-                                            memorabili della nostra vita, creando ricordi che durano per sempre e che ci
-                                            portiamo nel cuore.
-
-                                        </li>
-                                        <li>
-                                            Promozione della creatività: Esplorando luoghi nuovi e stimolanti, possiamo
-                                            sbloccare la nostra creatività e trovare ispirazione per nuove idee e
-                                            progetti.
-
-                                        </li>
-                                        <li> Apprezzamento della diversità: Viaggiando, impariamo ad apprezzare la
-                                            ricchezza della diversità umana e naturale, rafforzando il nostro senso di
-                                            appartenenza a un'unica comunità globale.</li>
-                                    </ul>
-
-                                </div>
-                                <div class="col-xl-6 col-lg-12"><img class="rounded-5" id="front-page-img"
-                                        src="<?php echo get_template_directory_uri(); ?>/assets/2149153260.jpg" alt="">
+                                        Viaggiare ha anche un impatto positivo sulla salute fisica. Spesso coinvolge
+                                        attività all'aria aperta come escursioni o nuoto, favorendo il movimento e il
+                                        benessere fisico. Inoltre, ci consente di sperimentare una dieta più varia e
+                                        nutriente, arricchendo il nostro corpo con sapori e alimenti locali.
+                                    </p>
                                 </div>
                             </div>
                         </div>
+                        <hr>
+
                     </div>
+                </div>
 
-                </section>
-            </div>
+                <div class="col-12">
 
+                    <div class="container pb-5">
 
-            <div class="col-12 mb-5">
-                <section id="section-details">
-                    <div class="container-fluid " id="fadeInLeftBig">
-                        <div id="card-home" class="p-4 card  rounded-5">
-                            <div class="row  justify-content-start align-items-center g-2">
-                                <div class="col-xl-6 col-lg-12"><img id="front-page-img" class="rounded-5"
-                                        src="<?php echo get_template_directory_uri(); ?>/assets/iStock-527115069.jpg"
-                                        alt=""></div>
-                                <div class="col-xl-6 col-lg-12 ">
+                        <div class="row rounded">
 
-                                    <h2>RESPONSABILE E SOSTENIBILE</h2>
-                                    <p>Attraverso il turismo responsabile e sostenibile, possiamo contribuire alla
+                            <div class="col-12 col-lg-8 ">
+                                <div class="px-5 pt-4">
+                                    <h4 class="fw-7">Responsabile e sostenibile</h4>
+                                    <p class="text-secondary">
+                                        Attraverso il turismo responsabile e sostenibile, possiamo contribuire alla
                                         conservazione dell'ambiente e al sostegno delle comunità locali. Il viaggiare ci
                                         offre l'opportunità di connetterci con la natura, di apprezzare la sua bellezza
-                                        e di impegnarci nella sua protezione.
-
-                                        Infine, il viaggiare ci permette di creare legami significativi con le persone
-                                        che incontriamo lungo il percorso. Attraverso lo scambio culturale e
-                                        l'ospitalità locale, possiamo costruire ponti tra le diverse culture e
-                                        promuovere la comprensione e la pace nel mondo.
-
-                                        In sintesi, il benessere di viaggiare va oltre la semplice vacanza: è
-                                        un'esperienza trasformativa che arricchisce il nostro essere in molti modi. Ci
-                                        insegna a vivere pienamente, ad apprezzare la bellezza del mondo e a coltivare
-                                        una gioia e una gratitudine durature per la vita.</p>
+                                        e di impegnarci nella sua protezione. Infine, il viaggiare ci permette di creare
+                                        legami significativi con le persone che incontriamo lungo il percorso.
+                                        Attraverso lo scambio culturale e l'ospitalità locale, possiamo costruire ponti
+                                        tra le diverse culture e promuovere la comprensione e la pace nel mondo. In
+                                        sintesi, il benessere di viaggiare va oltre la semplice vacanza: è un'esperienza
+                                        trasformativa che arricchisce il nostro essere in molti modi. Ci insegna a
+                                        vivere pienamente, ad apprezzare la bellezza del mondo e a coltivare una gioia e
+                                        una gratitudine durature per la vita.
+                                    </p>
                                 </div>
-
+                            </div>
+                            <div class="col-12 col-lg-4"><img style="width:100%;height:100%;object-fit:cover"
+                                    src="<?php echo get_template_directory_uri(); ?>/assets/iStock-527115069.jpg"
+                                    alt="">
                             </div>
                         </div>
+                        <hr>
+
                     </div>
+                </div>
+                <div class="col-12">
 
-                </section>
-            </div>
-            <div class="col-12 mb-5">
-                <section id="section-details">
-                    <div class="container-fluid " id="fadeInRight">
-                        <div id="card-home" class="p-4 card  rounded-5">
-                            <div class="row flex-wrap-reverse justify-content-start align-items-center g-2">
-                                <div class="ps-3 col-xl-6 col-lg-12 ">
-                                    <h2>CONCLUSIONE</h2>
-                                    <p>
-                                        In conclusione, il viaggiare è molto più di una semplice attività ricreativa; è
-                                        un'esperienza che arricchisce il nostro essere in molti modi. Oltre a offrirci
-                                        momenti di relax e divertimento, il viaggiare ci spinge a esplorare, imparare e
-                                        crescere, contribuendo al nostro benessere fisico, mentale e spirituale. <br>
+                    <div class="container pb-5">
 
-                                        Attraverso il viaggiare, ci allontaniamo dalla nostra routine quotidiana, ci
-                                        immergiamo in nuove culture e realtà, e ci apriamo a esperienze che ci
-                                        arricchiscono profondamente. Questa avventura ci porta a scoprire lati
-                                        inaspettati di noi stessi, ad ampliare le nostre prospettive e ad accogliere la
-                                        diversità con gioia e gratitudine.<br>
+                        <div class="row rounded">
+                            <div class="col-12 col-lg-4"><img style="width:100%;height:100%;object-fit:cover"
+                                    src="<?php echo get_template_directory_uri(); ?>/assets/2149153260.jpg" alt="">
+                            </div>
+                            <div class="col-12 col-lg-8 ">
+                                <div class="px-5 pt-4">
+                                    <h4 class="fw-7">Ispirazione crescita personale</h4>
+                                    <p class="text-secondary">
+                                        Viaggiare è una ricca fonte di ispirazione e crescita personale. Oltre ai
+                                        benefici già citati, contribuisce in vari modi al nostro benessere complessivo.
 
-                                        Inoltre, il viaggiare ci offre l'opportunità di creare ricordi indelebili, di
-                                        forgiare legami significativi con le persone che incontriamo lungo il percorso e
-                                        di contribuire alla conservazione e al rispetto dell'ambiente e delle comunità
-                                        locali.<br>
-
-                                        In un mondo sempre più connesso digitalmente, il viaggiare ci ricorda
-                                        l'importanza di sperimentare il mondo attraverso i nostri sensi, di abbracciare
-                                        l'incertezza e l'avventura e di coltivare una profonda connessione con noi
-                                        stessi, con gli altri e con il mondo che ci circonda.<br>
-
-                                        Perciò, che si tratti di un'avventura lontana o di una gita nel parco locale,
-                                        prendersi il tempo per viaggiare è un investimento prezioso nel nostro benessere
-                                        complessivo e una testimonianza del desiderio innato dell'essere umano di
-                                        esplorare, scoprire e crescere.</p>
+                                        Espansione delle prospettive: Esplorando nuove culture e punti di vista,
+                                        sviluppiamo una mentalità aperta e inclusiva.
+                                        Aumento della fiducia in sé stessi: Affrontando sfide durante i viaggi,
+                                        superiamo i nostri limiti e acquisiamo fiducia nelle nostre capacità.
+                                        Riduzione dello stress: Lontano dalla routine, ci disconnettiamo dalle
+                                        preoccupazioni, favorendo serenità mentale.
+                                        Stimolazione sensoriale: Le esperienze di viaggio coinvolgono i sensi,
+                                        rendendoci più consapevoli del mondo circostante.
+                                        Crescita personale: Il viaggiare ci spinge al di là della nostra zona di
+                                        comfort, offrendoci costanti opportunità di apprendimento e crescita.
+                                        Memorie indelebili: Le esperienze di viaggio sono memorabili, creando ricordi
+                                        che durano nel tempo.
+                                        Promozione della creatività: Esplorando nuovi luoghi, sblocciamo la creatività e
+                                        troviamo ispirazione per nuove idee.
+                                        Apprezzamento della diversità: Viaggiando, impariamo ad apprezzare la ricchezza
+                                        della diversità umana e naturale, rafforzando il nostro senso di appartenenza
+                                        globale.
+                                    </p>
                                 </div>
-                                <div class="col-xl-6 col-lg-12"><img id="front-page-img" class="rounded-5"
-                                        src="<?php echo get_template_directory_uri(); ?>/assets/city.jpg" alt=""></div>
-
                             </div>
                         </div>
+                        <hr>
                     </div>
+                </div>
 
-                </section>
+                <div class="col-12">
+
+                    <div class="container pb-5">
+
+                        <div class="row rounded">
+                            <div class="col-12 col-lg-8 ">
+                                <div class="px-5 pt-4">
+                                    <h4 class="fw-7">Conclusione</h4>
+                                    <p class="text-secondary">
+                                        Il viaggiare non è solo un passatempo, ma un'esperienza che arricchisce la
+                                        nostra vita in molteplici modi. Oltre al relax e al divertimento, ci spinge ad
+                                        esplorare, imparare e crescere, contribuendo al nostro benessere fisico, mentale
+                                        e spirituale. Ci allontana dalla routine, ci apre a nuove culture e ci
+                                        arricchisce profondamente, permettendoci di scoprire nuovi lati di noi stessi e
+                                        ampliare le nostre prospettive. Creiamo ricordi indelebili, legami significativi
+                                        e contribuiamo alla conservazione dell'ambiente e al rispetto delle comunità
+                                        locali. In un'era digitalmente connessa, il viaggiare ci ricorda l'importanza di
+                                        sperimentare il mondo con i nostri sensi, abbracciare l'incertezza e coltivare
+                                        una profonda connessione con noi stessi, gli altri e il mondo che ci circonda.
+                                        Quindi, sia che si tratti di un'avventura lontana o di una semplice gita nel
+                                        parco locale, investire del tempo nel viaggiare è un investimento prezioso nel
+                                        nostro benessere complessivo, testimoniando il nostro desiderio innato di
+                                        esplorare, scoprire e crescere.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4"><img style="width:100%;height:100%;object-fit:cover"
+                                    src="<?php echo get_template_directory_uri(); ?>/assets/city.jpg" alt="">
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
             </div>
+
         </div>
-
-        <!-- QUESTA RICEVE I POST START -->
-
-
-        <!-- QUESTA RICEVE I POST END -->
-
-
-
     </main>
 </div>
 

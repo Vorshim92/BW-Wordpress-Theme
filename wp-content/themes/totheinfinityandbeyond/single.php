@@ -17,20 +17,35 @@ the_post(); ?>
 
             <?php
             $current_post_id = get_the_ID();
-            $current_post_categories = wp_get_post_categories($current_post_id)
+            $current_post_categories = wp_get_object_terms($current_post_id, 'location', array('fields' => 'ids'));
+
+            $args = array(
+                'posts_per_page' => 5,
+                // 'post__not_in' => array($current_post_id),
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'location',
+                        'field' => "term_id",
+                        'terms' => $current_post_categories[0],
+                    )
+                )
+            );
+
             ?>
 
             <div class="row gy-2">
 
 
                 <?php {
-                    $args = array(
-                        'posts_per_page' => 5,
-                        'category__in' => $current_post_categories,
-                        'post__not_in' => array($current_post_id)
-                    );
 
-                    $sidebar_posts = new WP_Query($args);
+
+                    $sidebar_posts = new WP_Query(
+                        $args + array(
+                            'post_type' => 'post',
+                            'post__not_in' => array($current_post_id)
+
+                        )
+                    );
                     while ($sidebar_posts->have_posts()) :
                         $sidebar_posts->the_post();
 

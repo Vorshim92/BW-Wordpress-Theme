@@ -40,11 +40,11 @@
                     </li>
                     <li class="nav-item d-flex align-items-center px-3 border-start">
                         <i class="bi bi-airplane-fill fs-6"></i>
-                        <a class="nav-link fs-6 fw-semibold text-white" href="<?= site_url('/home') ?>">Destinazioni</a>
+                        <a class="nav-link fs-6 fw-semibold text-white" href="#aa">Offerte</a>
                     </li>
                     <li class="nav-item d-flex align-items-center px-3 border-start">
                         <i class="bi bi-people-fill fs-6"></i>
-                        <a class="nav-link fs-6 fw-semibold text-white" href="<?= site_url('/home') ?>">Contatti</a>
+                        <a class="nav-link fs-6 fw-semibold text-white" href="#ff">Contatti</a>
                     </li>
                     <li class="nav-item d-flex align-items-center px-3 border-start">
                         <img width="25rem" height="25rem" style="object-fit-cover"

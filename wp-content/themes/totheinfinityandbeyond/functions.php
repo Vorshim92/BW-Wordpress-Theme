@@ -124,5 +124,4 @@ add_shortcode('custom_add_review', function () {
     include 'add-review.php';
     return ob_get_clean();
 });
-?>
-<!-- funzione per il colore del navbar -->
+

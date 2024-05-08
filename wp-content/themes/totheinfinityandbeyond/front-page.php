@@ -113,7 +113,7 @@ get_header(); ?>
 
 
 
-                <hr>
+                <hr id="aa">
 
                 <h1 class="fw-7 py-5">Le nostre proposte di questo mese</h1>
                 <div class="row gy-4 pb-5">
@@ -134,7 +134,7 @@ get_header(); ?>
                                     <?php the_post_thumbnail('custom-cover-thumbnail', ['class' => '', 'id' => 'img-state']); ?>
                                     <div class="card-body">
                                         <h5 class="card-title"><?php the_title(); ?></h5>
-                                        <a href="<?php the_permalink(); ?>" class="btn btn-primary">Leggi di più</a>
+                                        <a href="<?php the_permalink(); ?>" class="btn btn-warning rounded mt-3">Leggi di più</a>
                                     </div>
                                 </div>
                             </div>
@@ -228,7 +228,7 @@ get_header(); ?>
         <div class="container">
             <div class="row pt-5">
                 <div class="col-12">
-                    <h1 class="text-center fw-7 pb-5 mb-5">Perchè è importatnte viaggiare?</h1>
+                    <h1 class="text-center fw-7 pb-5 mb-5">Perchè è importante viaggiare?</h1>
                 </div>
                 <div class="col-12">
 

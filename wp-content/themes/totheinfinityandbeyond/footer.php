@@ -9,7 +9,7 @@
                 <p class="m-2">Cosa dicono di noi su Trustpilot</p>
                 <p class="m-2"><?php echo get_bloginfo('description'); ?></p>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4"id='ff'>
                 <h5>Contact Us</h5>
                 <p class="m-2"><i class="bi bi-geo-alt-fill"></i></i> | Address: 123 Main St, Cityville</p>
                 <p class="m-2"><i class="bi bi-telephone-fill"></i> | Phone: +123 456 7890</p>

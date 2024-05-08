@@ -64,7 +64,9 @@ color: #DF9F05!important;
   font-weight: 800;
   text-transform: uppercase;
 }
-
+.fs-12{
+  font-size: 2rem;
+}
 .navbar {
   position: fixed !important;
   z-index: 222;

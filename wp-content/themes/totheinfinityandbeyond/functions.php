@@ -38,14 +38,41 @@ add_action('init', function () {
             'archives' => 'Reward Programs',
         ],
         'show_in_rest' => true,
-        'taxonomies' => ['category'],
+        'taxonomies' => [''],
         'hierarchical' => false,
 
     ]);
 });
 add_action('init', function () {
+    register_taxonomy('location', ["post", "ttiab_reviews", "ttiab_promotions"], array(
+        // Hierarchical taxonomy (like categories)
+        'hierarchical' => true,
+        'show_in_rest' => true,
+        // This array of options controls the labels displayed in the WordPress Admin UI
+        'labels' => array(
+            'name' => _x('Locations', 'taxonomy general name'),
+            'singular_name' => _x('Location', 'taxonomy singular name'),
+            'search_items' =>  __('Search Locations'),
+            'all_items' => __('All Locations'),
+            'parent_item' => __('Parent Location'),
+            'parent_item_colon' => __('Parent Location:'),
+            'edit_item' => __('Edit Location'),
+            'update_item' => __('Update Location'),
+            'add_new_item' => __('Add New Location'),
+            'new_item_name' => __('New Location Name'),
+            'menu_name' => __('Locations'),
+        ),
+        // Control the slugs used for this taxonomy
+        'rewrite' => array(
+            'slug' => 'locations', // This controls the base slug that will display before each term
+            'with_front' => false, // Don't display the category base before "/locations/"
+            'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
+        ),
+        'show_admin_column' => true,
+
+    ));
     register_post_type('ttiab_trips', [
-        'supports' => ['title', 'editor', 'author', 'thumbnail', 'page-attributes'],
+        'supports' => ['title', 'editor', 'author', 'thumbnail'],
         'rewrite' => ['slug' => 'viaggi'],
         'delete_with_user' => false,
         'has_archive' => true,
@@ -60,13 +87,11 @@ add_action('init', function () {
             'archives' => 'Reward Programs',
         ],
         'show_in_rest' => true,
-        'taxonomies' => ['category'],
+        'taxonomies' => ['location'],
         'hierarchical' => false,
     ]);
-});
-add_action('init', function () {
     register_post_type('ttiab_promotions', [
-        'supports' => ['title', 'editor', 'author', 'thumbnail', 'page-attributes'],
+        'supports' => ['title', 'editor', 'author', 'thumbnail'],
         'rewrite' => ['slug' => 'promozioni'],
         'delete_with_user' => false,
         'has_archive' => true,
@@ -81,15 +106,16 @@ add_action('init', function () {
             'archives' => 'Reward Programs',
         ],
         'show_in_rest' => true,
-        'taxonomies' => ['category'],
+        'taxonomies' => [''],
         'hierarchical' => false,
     ]);
 });
 
+
 // add categories for attachments
 function add_categories_for_attachments()
 {
-    register_taxonomy_for_object_type('category', 'attachment');
+    register_taxonomy_for_object_type('location', 'attachment');
 }
 add_action('init', 'add_categories_for_attachments');
 add_action('admin_menu', 'add_user_menu_bubble');
@@ -125,3 +151,17 @@ add_shortcode('custom_add_review', function () {
     return ob_get_clean();
 });
 
+function wpsnipp_remove_default_taxonomies()
+{
+    global $pagenow;
+
+    register_taxonomy('post_tag', array());
+    register_taxonomy('category', array());
+
+    $tax = array('post_tag', 'category');
+
+    if ($pagenow == 'edit-tags.php' && in_array($_GET['taxonomy'], $tax)) {
+        wp_die('Invalid taxonomy');
+    }
+}
+add_action('init', 'wpsnipp_remove_default_taxonomies');

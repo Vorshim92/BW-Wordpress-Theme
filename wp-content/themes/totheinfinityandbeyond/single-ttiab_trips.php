@@ -1,11 +1,26 @@
 <?php get_header(); ?>
 <?php $current_post_id = get_the_ID();
-$current_post_categories = wp_get_post_categories($current_post_id);
+$current_post_categories = wp_get_object_terms($current_post_id, 'location', array('fields' => 'ids'));
 
+// $current_post_categories = wp_get_post_categories($current_post_id, array("cats" => wp_get_object_terms($current_post_id, 'location')));
+
+// $args = array(
+//     'location__in' => $current_post_categories,
+//     'posts_per_page' => 5
+// );
+//
 $args = array(
-    'category__in' => $current_post_categories,
-    'posts_per_page' => 5
+    'posts_per_page' => 5,
+    // 'post__not_in' => array($current_post_id),
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'location',
+            'field' => "term_id",
+            'terms' => $current_post_categories[0],
+        )
+    )
 );
+
 ?>
 
 <div style="z-index: 1; position: relative;">
@@ -51,14 +66,10 @@ $args = array(
             <?php
 
 
-            $sidebar_posts = new WP_Query(
-                array(
-                    'category__in' => $current_post_categories,
-                    'posts_per_page' => 5,
-                    'post_type' => 'ttiab_promotions'
-                )
-            );
-            while ($sidebar_posts->have_posts()):
+            $sidebar_posts = new WP_Query($args + array(
+                'post_type' => 'ttiab_promotions'
+            ));
+            while ($sidebar_posts->have_posts()) :
                 $sidebar_posts->the_post();
 
 
@@ -87,15 +98,8 @@ $args = array(
 
             <?php
 
-
-            $sidebar_posts = new WP_Query(
-                array(
-                    'category__in' => $current_post_categories,
-                    'posts_per_page' => 5,
-                    'post_type' => 'ttiab_reviews'
-                )
-            );
-            while ($sidebar_posts->have_posts()):
+            $sidebar_posts = new WP_Query($args + array('post_type' => 'ttiab_reviews'));
+            while ($sidebar_posts->have_posts()) :
                 $sidebar_posts->the_post();
 
 
@@ -135,8 +139,7 @@ $args = array(
                 <?php
 
 
-
-                $query = new WP_Query($args);
+                $query = new WP_Query($args + array('post_type' => 'post'));
                 if ($query->have_posts()) { ?>
 
                     <?php while ($query->have_posts()) {

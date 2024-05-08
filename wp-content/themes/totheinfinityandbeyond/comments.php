@@ -24,7 +24,7 @@
 
 </div>
 
-<div class="container-fluid">
+<div class="container">
     <div class="card rounded-5 bg-black p-5 text-white">
 
         <p class="">Se hai trovato utile questo articolo</p>

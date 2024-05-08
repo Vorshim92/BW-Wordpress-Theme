@@ -2,7 +2,7 @@
 
 get_header();
 the_post(); ?>
-<div class="container">
+<div class="container mt-5 pt-5">
 
     <h1><?php the_title(); ?></h1>
     <a href="<?php the_author_meta() ?>"></a>

@@ -30,13 +30,13 @@ add_action('init', function () {
         'public' => true,
         'menu_icon' => 'dashicons-tickets-alt',
         'labels' => [
-                'name' => 'Recensioni',
-                'add_new_item' => 'Aggiungi Nuova Recensione',
-                'edit_item' => 'Modifica Nuova Recensione',
-                'all_items' => 'Tutte le Recensione',
-                'singular_name' => 'Recensione',
-                'archives' => 'Reward Programs',
-            ],
+            'name' => 'Recensioni',
+            'add_new_item' => 'Aggiungi Nuova Recensione',
+            'edit_item' => 'Modifica Nuova Recensione',
+            'all_items' => 'Tutte le Recensione',
+            'singular_name' => 'Recensione',
+            'archives' => 'Reward Programs',
+        ],
         'show_in_rest' => true,
         'taxonomies' => ['category'],
         'hierarchical' => false,
@@ -52,13 +52,13 @@ add_action('init', function () {
         'public' => true,
         'menu_icon' => 'dashicons-tickets-alt',
         'labels' => [
-                'name' => 'Viaggi',
-                'add_new_item' => 'Aggiungi Nuovo Viaggio',
-                'edit_item' => 'Modifica Viaggio',
-                'all_items' => 'Tutte i Viaggi',
-                'singular_name' => 'Viaggio',
-                'archives' => 'Reward Programs',
-            ],
+            'name' => 'Viaggi',
+            'add_new_item' => 'Aggiungi Nuovo Viaggio',
+            'edit_item' => 'Modifica Viaggio',
+            'all_items' => 'Tutte i Viaggi',
+            'singular_name' => 'Viaggio',
+            'archives' => 'Reward Programs',
+        ],
         'show_in_rest' => true,
         'taxonomies' => ['category'],
         'hierarchical' => false,
@@ -73,13 +73,13 @@ add_action('init', function () {
         'public' => true,
         'menu_icon' => 'dashicons-tickets-alt',
         'labels' => [
-                'name' => 'Promozioni',
-                'add_new_item' => 'Aggiungi Nuova Promozione',
-                'edit_item' => 'Modifica Promozione',
-                'all_items' => 'Tutte le Promozioni',
-                'singular_name' => 'Promozione',
-                'archives' => 'Reward Programs',
-            ],
+            'name' => 'Promozioni',
+            'add_new_item' => 'Aggiungi Nuova Promozione',
+            'edit_item' => 'Modifica Promozione',
+            'all_items' => 'Tutte le Promozioni',
+            'singular_name' => 'Promozione',
+            'archives' => 'Reward Programs',
+        ],
         'show_in_rest' => true,
         'taxonomies' => ['category'],
         'hierarchical' => false,
@@ -92,27 +92,35 @@ function add_categories_for_attachments()
     register_taxonomy_for_object_type('category', 'attachment');
 }
 add_action('init', 'add_categories_for_attachments');
-add_action( 'admin_menu', 'add_user_menu_bubble' );
+add_action('admin_menu', 'add_user_menu_bubble');
 
-function add_user_menu_bubble() {
-   global $wpdb;
-   global $menu;
+function add_user_menu_bubble()
+{
+    global $wpdb;
+    global $menu;
 
-   $memo_count = wp_count_posts( 'ttiab_reviews' )->pending;
+    $memo_count = wp_count_posts('ttiab_reviews')->pending;
 
-  if ( $memo_count ) {
+    if ($memo_count) {
 
-    foreach ( $menu as $key => $value ) {
+        foreach ($menu as $key => $value) {
 
-      if ( $menu[$key][2] == 'edit.php?post_type=ttiab_reviews' ) {
+            if ($menu[$key][2] == 'edit.php?post_type=ttiab_reviews') {
 
-        $menu[$key][0] .= ' <span class="update-plugins">' . $memo_count . '</span>';
+                $menu[$key][0] .= ' <span class="update-plugins">' . $memo_count . '</span>';
 
-        return;
-      }
+                return;
+            }
+        }
     }
-  }
 }
 
-//funzione perottimizare la qualità delle immagini di copertina
+//funzione per ottimizare la qualità delle immagini di copertina
 add_image_size('custom-cover-thumbnail', 4000, 4000, true);
+
+
+add_shortcode('custom_add_review', function () {
+    ob_start();
+    include 'add-review.php';
+    return ob_get_clean();
+});

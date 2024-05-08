@@ -1,4 +1,6 @@
 <?php
+$current_post_id = get_the_ID();
+$current_post_categories = wp_get_post_categories($current_post_id);
 
 
 if (isset($_POST['submit'])) {

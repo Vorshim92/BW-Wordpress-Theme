@@ -165,3 +165,5 @@ function wpsnipp_remove_default_taxonomies()
     }
 }
 add_action('init', 'wpsnipp_remove_default_taxonomies');
+
+
